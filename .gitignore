@@ -1,0 +1,12 @@
+# Ignorar compilación de Python
+__pycache__/
+*.py[cod]
+
+# Ignorar entorno virtual
+venv/
+env/
+
+# Ignorar temporales del editor y Excel local
+*.xlsx
+tempCodeRunnerFile*
+.vscode/

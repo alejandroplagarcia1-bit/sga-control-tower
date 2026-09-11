@@ -1,0 +1,28 @@
+sga_control_tower/
+├── config/
+│   ├── settings.py           # Configuración general, variables de entorno y temas GUI
+│   └── database.py           # Gestor de conexión híbrida (MongoDB + Excel)
+├── database/
+│   ├── mongo_client.py       # Cliente PyMongo (Colecciones: operarios, fichajes, stock, albaranes)
+│   └── excel_exporter.py     # Motor de generación automática de informes .xlsx para Nóminas
+├── models/
+│   ├── operario.py           # Modelo DataClass (ID, Nombre, ETT, Turno, Estado Alta/Baja)
+│   ├── fichaje.py            # Modelo de marcajes (Entrada, Salida, Estado Verde, Total Horas)
+│   ├── albaran.py            # Modelo para camiones, choferes, albaranes IN/OUT e imágenes
+│   └── ubicacion.py          # Estructura del almacén (A-H Niveles 1-3, I-J Sobrestock/Verano)
+├── ui/
+│   ├── components/
+│   │   ├── fichaje_card.py   # Tarjeta interactiva de fichaje con cambio dinámico a VERDE
+│   │   └── mapa_nave.py      # Componente gráfico interactivo de la nave
+│   ├── app_main.py           # Ventana principal CustomTkinter con pestañas de navegación
+│   ├── view_acceso.py        # Panel de fichaje doble clic y estado de presencia
+│   ├── view_gestion_ett.py   # Panel CRUD para Gestión de Altas y Bajas de trabajadores
+│   ├── view_camiones.py      # Panel de Recepción / Expedición con cámara / fotos
+│   ├── view_sga_slotting.py # Panel Mapa Nave + Reubicación automática "Modo Verano"
+│   └── view_nominas.py       # Dashboard de Horas y Exportación de Fichajes a Excel
+├── storage/
+│   ├── albaranes_fotos/      # Almacenamiento local de fotografías de albaranes
+│   ├── incidencias_fotos/    # Fotografías de inspección de carga
+│   └── exports_excel/        # Carpetas de salidas de informes de nóminas
+├── requirements.txt          # customtkinter, pymongo, pandas, openpyxl, pillow
+└── main.py                   # Script de inicio / Punto de entrada
